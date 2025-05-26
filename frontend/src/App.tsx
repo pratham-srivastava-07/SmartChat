@@ -11,7 +11,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:3001/messages')
+    fetch('https://smartchat-cq10.onrender.com/messages')
       .then(res => res.json())
       .then(setMessages)
       .catch(error => console.error('Error fetching messages:', error));
@@ -26,7 +26,7 @@ export default function App() {
     setIsLoading(true);
 
     try {
-      const res = await fetch('http://localhost:3001/chat', {
+      const res = await fetch('https://smartchat-cq10.onrender.com/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: input })
