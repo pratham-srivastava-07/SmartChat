@@ -4,10 +4,10 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
   password: process.env.MY_PASSWORD,
-  database: 'chat_journal'
+  database: process.env.MYSQL_DBNAME
 });
 
 module.exports = pool;
